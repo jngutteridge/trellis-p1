@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use App\Entity\Node;
 use App\Entity\NodeType;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -143,6 +144,11 @@ class AppFixtures extends Fixture
         $manager->persist($nodePodcast1);
         $manager->persist($nodePodcast2);
         $manager->persist($nodePodcast3);
+
+//        $user = new User();
+//        $user->setEmail('EMAIL');
+//        $manager->persist($user);
+
         $manager->flush();
     }
 }

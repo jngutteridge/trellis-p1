@@ -1,0 +1,10 @@
+hwi_oauth:
+  firewall_names: [secured_area]
+  resource_owners:
+    facebook:
+      type:                facebook
+      client_id:           '%env(FB_ID)%'
+      client_secret:       '%env(FB_SECRET)%'
+      scope:               "email"
+      options:
+        csrf: true

@@ -33,3 +33,6 @@ services:
       - { name: doctrine.event_subscriber, connection: default }
     calls:
       - [ setAnnotationReader, [ "@annotation_reader" ] ]
+
+  app.service.oath_user_provider:
+    class: App\Service\OAuthUserProvider
