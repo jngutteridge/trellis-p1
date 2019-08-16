@@ -145,9 +145,9 @@ class AppFixtures extends Fixture
         $manager->persist($nodePodcast2);
         $manager->persist($nodePodcast3);
 
-        $user = new User();
-        $user->setEmail('jackgutteridge@gmail.com');
-        $manager->persist($user);
+//        $user = new User();
+//        $user->setEmail('');
+//        $manager->persist($user);
 
         $manager->flush();
     }
