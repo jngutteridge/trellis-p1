@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Response\TransferResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
@@ -18,15 +17,5 @@ class LoginController extends AbstractController
     public function user()
     {
         return new TransferResponse($this->getUser());
-    }
-
-    /**
-     * @Route(path="/error")
-     */
-    public function error()
-    {
-        return new JsonResponse([
-
-        ]);
     }
 }

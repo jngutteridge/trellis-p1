@@ -1,288 +1,238 @@
-$color-background: #E6F5FA;
+$color-background: #e6e6e6;
 $color-white: #fafcfc;
-$color-dark: #3D8199;
+$color-dark: #859299;
 $color-grey: #666666;
-$color-light: #cfe1e6;
+$color-light: #def0f2;
 $color-black: #0a1517;
 $color-highlight: #C8EDFA;
 
-$font-heading: 'Poppins', sans-serif;
+$font-heading: 'Playfair Display', serif;
 
 html {
-  height: 100%;
+    height: 100%;
 }
 
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: $color-background;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $color-background;
 }
 
 body h1 {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 body h2 {
-  font-weight: 300;
+    font-weight: 300;
 }
 
 body h3 {
-  font-size: inherit;
-  color: $color-grey;
-  font-weight: 300;
-  text-transform: uppercase;
+    font-size: inherit;
+    color: $color-grey;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 body table.can-hover {
-  thead tr {
-    cursor: unset;
-    &:hover {
-      background-color: unset;
+    thead tr {
+        cursor: unset;
+
+        &:hover {
+            background-color: unset;
+        }
     }
-  }
-  tr {
-    cursor: pointer;
-    &:hover {
-      background-color: $color-light;
+
+    tr {
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-light;
+        }
     }
-  }
 }
 
 body td,
 body th {
-  border: none;
+    border: none;
 }
 
 body th {
-  font-family: $font-heading;
-  color: $color-grey;
-  font-weight: 300;
-  text-transform: uppercase;
+    font-family: $font-heading;
+    color: $color-grey;
+    font-weight: 300;
+    text-transform: uppercase;
 }
 
 body thead {
-  border-bottom: 1px solid $color-grey;
+    border-bottom: 1px solid $color-grey;
 }
 
 #root,
 .full-height {
-  height: 100%;
+    height: 100%;
 }
 
 .spinner {
-  margin: 0 auto;
-  display: block;
-  animation: rotate 2s linear infinite;
-  z-index: 2;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 50px;
+    margin: 0 auto;
+    display: block;
+    animation: rotate 2s linear infinite;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
 
-  & .path {
-    stroke: hsl(190, 70, 75);
-    stroke-linecap: round;
-    animation: dash 1.5s ease-in-out infinite;
-  }
+    & .path {
+        stroke: hsl(190, 70, 75);
+        stroke-linecap: round;
+        animation: dash 1.5s ease-in-out infinite;
+    }
 
 }
 
 @keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes dash {
-  0% {
-    stroke-dasharray: 1, 150;
-    stroke-dashoffset: 0;
-  }
-  50% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -35;
-  }
-  100% {
-    stroke-dasharray: 90, 150;
-    stroke-dashoffset: -124;
-  }
+    0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+    }
 }
 
 .panel {
-  text-align: center;
-  max-width: 320px;
-  background-color: $color-white;
-  border: $color-dark solid 1px;
-  border-radius: 15px;
-  margin: 20px auto;
-  padding-bottom: 15px;
+    text-align: center;
+    max-width: 320px;
+    background-color: $color-white;
+    border: $color-dark solid 1px;
+    border-radius: 2px;
+    margin: 20px auto;
+    padding-bottom: 15px;
 
-  .container {
-    padding: 15px 30px 5px;
-  }
-
-  h3 {
-    &.email {
-      margin-top: 0;
-      font-weight: normal;
-      text-transform: none;
+    .container {
+        padding: 15px 30px 5px;
     }
 
-    &.name {
-      margin-bottom: .4rem;
-      font-weight: 500;
-      color: $color-black;
-      text-transform: none;
-    }
-  }
+    h3 {
+        &.email {
+            margin-top: 0;
+            font-weight: normal;
+            text-transform: none;
+        }
 
-  p {
-    text-align: left;
-  }
+        &.name {
+            margin-bottom: .4rem;
+            font-weight: 500;
+            color: $color-black;
+            text-transform: none;
+        }
+    }
+
+    p {
+        text-align: left;
+    }
 }
 
 .user {
-  img {
-    display: block;
-    border-radius: 50%;
-    max-width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    img {
+        display: block;
+        border-radius: 50%;
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .nav-container {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-
-  a {
     display: flex;
     flex-direction: column;
-    color: unset;
-    text-decoration: none;
+    text-align: left;
 
-    &.active {
-      button {
-        background-color: $color-highlight;
-        color: $color-dark;
-        font-weight: 500;
+    a {
+        display: flex;
+        flex-direction: column;
+        color: unset;
+        text-decoration: none;
+
+        &.active {
+            button {
+                background-color: $color-highlight;
+                color: $color-dark;
+                font-weight: 500;
+
+                path {
+                    fill: $color-dark;
+                }
+            }
+        }
+    }
+
+    button {
+        text-align: left;
+        background: transparent;
+        transition: background-color 200ms;
+        border: none;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        svg {
+            margin-right: 14px;
+        }
 
         path {
-          fill: $color-dark;
+            fill: $color-grey;
         }
-      }
-    }
-  }
 
-  button {
-    font-family: $font-heading;
-    text-align: left;
-    background: none;
-    border: none;
-    padding: 12px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    svg {
-      margin-right: 15px;
+        &:hover {
+            background-color: $color-light;
+        }
     }
-
-    path {
-      fill: $color-grey;
-    }
-
-    &:hover {
-      background-color: $color-light;
-    }
-  }
 }
 
 .nav-inline-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  margin: -10px;
-
-  button {
-    text-align: center;
-    background: none;
-    border: 1px solid $color-grey;
-    border-radius: 20px;
-    width: 80px;
-    height: 80px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: -10px;
 
-    svg {
-      margin: 0;
+    button {
+        text-align: center;
+        background: none;
+        border: 1px solid $color-grey;
+        border-radius: 2px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        padding: 0;
+
+        svg {
+            margin: 0;
+        }
+
+        path {
+            fill: $color-grey;
+        }
     }
-
-    path {
-      fill: $color-grey;
-    }
-  }
-}
-
-.manager {
-  height: 100%;
-}
-
-.manager-header {
-  display: flex;
-  flex-direction: row;
-  background-color: $color-dark;
-  justify-content: space-between;
-
-  button {
-    display: flex;
-    background: none;
-    border: none;
-    align-items: center;
-    cursor: pointer;
-    padding: 15px;
-    color: $color-white;
-    font-family: $font-heading;
-
-    path {
-      fill: $color-white;
-    }
-
-    &:hover {
-      background-color: hsla(255, 255, 255, 0.1);
-    }
-  }
-}
-
-.manager-body {
-  display: flex;
-  flex-direction: row;
-  background-color: $color-white;
-  height: 100%;
-}
-
-.manager-nav {
-  flex-basis: 260px;
-  padding: 20px 20px 20px 0;
-
-  button {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-  }
-}
-
-.manager-main {
-  padding-top: 30px;
-  padding-right: 20px;
-  flex-grow: 1;
 }

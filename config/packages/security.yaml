@@ -10,7 +10,6 @@ security:
 
   firewalls:
     secured_area:
-      anonymous: ~
       provider: users
       oauth:
         resource_owners:

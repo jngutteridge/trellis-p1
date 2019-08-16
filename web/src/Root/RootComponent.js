@@ -1,25 +1,11 @@
 import React, {Component} from 'react';
 import connect from "react-redux/es/connect/connect";
-import {Helmet} from "react-helmet";
-import {GoogleFont, TypographyStyle} from "react-typography";
-import Typography from 'typography';
 import LoadingComponent from "../Core/LoadingComponent";
 import LoginComponent from "../Login/LoginComponent";
-import {userRetrieveAction} from "../Login/LoginService";
-import UserDisplayComponent from "../Core/UserDisplayComponent";
-
-const typography = new Typography({
-    baseFontSize: "14px",
-    headerFontFamily: ['Poppins', 'sans-serif'],
-    bodyFontFamily: ['Roboto', 'serif'],
-    googleFonts: [{
-        name: 'Roboto',
-        styles: ['400, 500']
-    }, {
-        name: 'Poppins',
-        styles: ['300']
-    }]
-});
+import {userRetrieve} from "../Login/LoginService";
+import {BrowserRouter, Link, Route} from "react-router-dom";
+import {ProfilePanelComponent} from "../Core/ProfilePanelComponent";
+import NodeComponent from "../Node/NodeComponent";
 
 class RootComponent extends Component {
 
@@ -29,39 +15,31 @@ class RootComponent extends Component {
 
     render() {
         const {loading, user} = this.props;
-        let body;
-        if (loading) {
-            body = <LoadingComponent/>;
-        } else if (user == null) {
-            body = <LoginComponent/>;
-        } else {
-            body = (
-                <div className="panel">
-                    <div className="container">
-                        <h1>Profile</h1>
-                        <UserDisplayComponent user={user}/>
-                    </div>
-                </div>);
+        if (user == null) {
+            if (loading) {
+                return <LoadingComponent/>;
+            }
+            return <LoginComponent/>;
         }
         return (
-            <div className="full-height">
-                <GoogleFont typography={typography}/>
-                <TypographyStyle typography={typography}/>
-                <Helmet>
-                    <meta charSet="utf-8"/>
-                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-                    <meta name="theme-color" content="#000000"/>
-                    <title>Tailor</title>
-                </Helmet>
-                {body}
-            </div>
+            <BrowserRouter>
+                <div className="full-height">
+                    <nav className="nav-container">
+                        <Link to="/profile">
+                            <button>Profile</button>
+                        </Link>
+                    </nav>
+                    <Route path="/profile" render={(props) => <ProfilePanelComponent {...props} user={user}/>}/>
+                    <Route path="/" exact component={NodeComponent}/>
+                </div>
+            </BrowserRouter>
         )
     }
 }
 
 const mapDispatchToProps = dispatch => ({
     init: () => {
-        dispatch(userRetrieveAction());
+        dispatch(userRetrieve());
     }
 });
 
