@@ -25,7 +25,7 @@ export const loginSagas = [
 
 function* loginSaga() {
     yield put(loading(USER_LOGIN));
-    window.location = '/login/redirect/facebook';
+    window.location = '/connect/facebook';
 }
 
 function* getLoginUserSaga() {
